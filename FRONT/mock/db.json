@@ -1,0 +1,21 @@
+{
+    "produtos": [
+        {
+            "idProduto": 1,
+            "codBarras": "123",
+            "urlImagem": "http://127.0.0.1:8887\\front-tccjames\\src\\app\\assets\\produtoAmendoimBrasil.png",
+            "titulo": "Amendoim Brasil Agtal 25g",
+            "marca": "Agtal",
+            "descricao": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.",
+            "ingredientes": [
+                "Amendoim",
+                "Farinha de trigo enriquecida com ferro e ácido fólico",
+                "Açúcar",
+                "Molho de soja (shoyu)",
+                "Sal refinado",
+                "Estabilizante goma arábica",
+                "Regulador de acidez bicarbonato de sódio"
+            ]
+        }
+    ]
+}
