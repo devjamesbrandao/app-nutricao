@@ -51,6 +51,7 @@ export function carregarImagem(url: string, timeoutT?: number) {
             reject("error");
 
         };
+        
         img.onload = function () {
 
             if (timer) { clearTimeout(timer) };
