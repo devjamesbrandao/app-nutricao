@@ -61,11 +61,12 @@ namespace BACKEND.Migrations
                 name: "PRODUTO_INGREDIENTE",
                 columns: table => new
                 {
-                    FK_PRODUTO_ID = table.Column<int>(type: "int", nullable: true),
+                    FK_PRODUTO_ID = table.Column<int>(type: "int", nullable: false),
                     FK_INGREDIENTE_ID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_PRODUTO_INGREDIENTE", x => new { x.FK_INGREDIENTE_ID, x.FK_PRODUTO_ID });
                     table.ForeignKey(
                         name: "FK_PRODUTO_INGREDIENTE_1",
                         column: x => x.FK_PRODUTO_ID,
@@ -87,6 +88,7 @@ namespace BACKEND.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_RESTRICAO_INGREDIENTE", x => new { x.FK_RESTRICAO_ALIMENTAR_ID, x.FK_INGREDIENTE_ID });
                     table.ForeignKey(
                         name: "FK_RESTRICAO_INGREDIENTE_1",
                         column: x => x.FK_INGREDIENTE_ID,
@@ -108,6 +110,7 @@ namespace BACKEND.Migrations
                 },
                 constraints: table =>
                 {
+                    table.PrimaryKey("PK_USUARIO_RESTRICAO", x => new { x.FK_RESTRICAO_ALIMENTAR_ID, x.FK_USUARIO_ID });
                     table.ForeignKey(
                         name: "FK_USUARIO_RESTRICAO_1",
                         column: x => x.FK_RESTRICAO_ALIMENTAR_ID,
@@ -121,11 +124,6 @@ namespace BACKEND.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PRODUTO_INGREDIENTE_FK_INGREDIENTE_ID",
-                table: "PRODUTO_INGREDIENTE",
-                column: "FK_INGREDIENTE_ID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_PRODUTO_INGREDIENTE_FK_PRODUTO_ID",
                 table: "PRODUTO_INGREDIENTE",
                 column: "FK_PRODUTO_ID");
@@ -134,16 +132,6 @@ namespace BACKEND.Migrations
                 name: "IX_RESTRICAO_INGREDIENTE_FK_INGREDIENTE_ID",
                 table: "RESTRICAO_INGREDIENTE",
                 column: "FK_INGREDIENTE_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_RESTRICAO_INGREDIENTE_FK_RESTRICAO_ALIMENTAR_ID",
-                table: "RESTRICAO_INGREDIENTE",
-                column: "FK_RESTRICAO_ALIMENTAR_ID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_USUARIO_RESTRICAO_FK_RESTRICAO_ALIMENTAR_ID",
-                table: "USUARIO_RESTRICAO",
-                column: "FK_RESTRICAO_ALIMENTAR_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_USUARIO_RESTRICAO_FK_USUARIO_ID",
