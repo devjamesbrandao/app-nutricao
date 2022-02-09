@@ -10,6 +10,8 @@ namespace BACKEND.Mappings
         {
             entity.ToTable("USUARIO");
 
+            entity.HasKey(x => x.ID);
+
             entity.Property(e => e.ID).ValueGeneratedNever();
 
             entity.Property(e => e.Nome)

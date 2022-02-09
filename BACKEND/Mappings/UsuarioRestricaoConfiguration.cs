@@ -8,20 +8,20 @@ namespace BACKEND.Mappings
     {
         public void Configure(EntityTypeBuilder<USUARIO_RESTRICAO> entity)
         {
-            entity.HasNoKey();
+            entity.HasKey(x => new { x.FK_RESTRICAO_ALIMENTAR_ID, x.FK_USUARIO_ID });
 
             entity.ToTable("USUARIO_RESTRICAO");
 
             entity.HasOne(d => d.FK_RESTRICAO_ALIMENTAR)
-                .WithMany()
+                .WithMany(x => x.UsuarioRestricaos)
                 .HasForeignKey(d => d.FK_RESTRICAO_ALIMENTAR_ID)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.NoAction)
                 .HasConstraintName("FK_USUARIO_RESTRICAO_1");
 
             entity.HasOne(d => d.FK_USUARIO)
-                .WithMany()
+                .WithMany(x => x.UsuarioRestricaos)
                 .HasForeignKey(d => d.FK_USUARIO_ID)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.NoAction)
                 .HasConstraintName("FK_USUARIO_RESTRICAO_2");
         }
     }
