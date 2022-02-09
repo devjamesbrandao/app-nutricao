@@ -4,19 +4,15 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BACKEND.Mappings
 {
-    public class ProdutoMapping : IEntityTypeConfiguration<PRODUTO>
+    public class UsuarioMapping : IEntityTypeConfiguration<USUARIO>
     {
-        public void Configure(EntityTypeBuilder<PRODUTO> entity)
+        public void Configure(EntityTypeBuilder<USUARIO> entity)
         {
-            entity.ToTable("PRODUTO");
+            entity.ToTable("USUARIO");
 
             entity.HasKey(x => x.ID);
 
             entity.Property(e => e.ID).ValueGeneratedNever();
-
-            entity.Property(e => e.CodBarra)
-                .HasMaxLength(20)
-                .IsUnicode(false);
 
             entity.Property(e => e.Nome)
                 .HasMaxLength(250)

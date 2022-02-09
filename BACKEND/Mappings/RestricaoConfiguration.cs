@@ -4,21 +4,17 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BACKEND.Mappings
 {
-    public class ProdutoMapping : IEntityTypeConfiguration<PRODUTO>
+    public class RestricaoMapping : IEntityTypeConfiguration<RESTRICAO_ALIMENTAR>
     {
-        public void Configure(EntityTypeBuilder<PRODUTO> entity)
+        public void Configure(EntityTypeBuilder<RESTRICAO_ALIMENTAR> entity)
         {
-            entity.ToTable("PRODUTO");
+            entity.ToTable("RESTRICAO_ALIMENTAR");
 
             entity.HasKey(x => x.ID);
 
             entity.Property(e => e.ID).ValueGeneratedNever();
 
-            entity.Property(e => e.CodBarra)
-                .HasMaxLength(20)
-                .IsUnicode(false);
-
-            entity.Property(e => e.Nome)
+            entity.Property(e => e.Descricao)
                 .HasMaxLength(250)
                 .IsUnicode(false);
         }

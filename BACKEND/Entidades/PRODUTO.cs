@@ -6,5 +6,6 @@ namespace BACKEND.Entidades
         public int ID { get; set; }
         public string Nome { get; set; }
         public string CodBarra { get; set; }
+        public virtual ICollection<PRODUTO_INGREDIENTE> ProdutosIngredientes {get; set;}
     }
 }
