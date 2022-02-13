@@ -32,7 +32,7 @@ const useStyles = makeStyles({
 
     gridSection: {
         display: 'grid',
-        rowGap: '3em',
+        rowGap: '1em',
         placeItems: 'center'
     },
 
@@ -165,6 +165,17 @@ export const AutorizacaoConsumo: React.FC = () => {
                             "Você pode consumir o produto informado."
                             :
                             "Você não pode consumir o produto informado."
+                    }
+
+                </span>
+
+                <span className={classes.aviso}>
+
+                    {
+                        podeConsumir ?
+                            ""
+                            :
+                            "Contém os ingredientes: (colocar aqui os ingredientes)"
                     }
 
                 </span>
