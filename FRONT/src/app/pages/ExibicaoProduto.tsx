@@ -107,9 +107,9 @@ export const ExibicaoProduto: React.FC = () => {
 
     function verificarPodeConsumir() {
 
-        const valor = Math.random() * (3 - 1) + 1;
+        const valor = produtoEncontrado.consumivel;
 
-        if (valor % 2 === 0) { setPodeConsumir(true) } else { setPodeConsumir(false) }
+        if (valor) { setPodeConsumir(true) } else { setPodeConsumir(false) }
 
         setAvancandoPagina(true);
 
