@@ -27,7 +27,7 @@ builder.Services.AddDbContext<NutricaoContext>(options => options.UseSqlServer(
 
 var app = builder.Build();
 
-using (var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
+using var scope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope();
 scope.ServiceProvider.GetService<NutricaoContext>().Database.Migrate();
 
 app.UseCors(
