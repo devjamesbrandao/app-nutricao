@@ -14,7 +14,7 @@ export const ProdutoEncontradoContext = createContext<IProdutoEncontradoContext>
 export const ProdutoEncontradoProvider: React.FC = ({ children }) => {
 
     const valorInicialProdutoEncontrado: IProduto = {
-        idProduto: 0,
+        idProduto: "",
         codBarras: "",
         urlImagem: "",
         titulo: "",
