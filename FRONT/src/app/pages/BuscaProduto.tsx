@@ -101,7 +101,7 @@ export const BuscaProduto: React.FC = () => {
             }, 500);
 
         }
-        catch {
+        catch (e) {
 
             const novaNotificacao: INotificacao = { severity: 'error', mensagem: 'Ocorreu um problema ao tentar buscar um produto com o código de barras informado' };
 
@@ -110,6 +110,8 @@ export const BuscaProduto: React.FC = () => {
             refInputCodBarras.current?.focus();
 
             refInputCodBarras.current?.select();
+
+            console.log(e);
 
         }
 
