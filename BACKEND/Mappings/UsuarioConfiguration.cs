@@ -12,7 +12,7 @@ namespace BACKEND.Mappings
 
             entity.HasKey(x => x.ID);
 
-            entity.Property(e => e.ID).ValueGeneratedNever();
+            entity.Property(e => e.ID).ValueGeneratedNever().HasMaxLength(50);
 
             entity.Property(e => e.Nome)
                 .HasMaxLength(250)
