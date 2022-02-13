@@ -1,3 +1,4 @@
+using BACKEND.DTO;
 using BACKEND.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,8 +19,19 @@ public class AppNutricaoController : ControllerBase
     }
 
     [HttpGet("verificar-consumo")]
-    public async Task<IActionResult> VerificarConsumo([FromQuery] int CodProd, int CodUsuario)
+    public async Task<IActionResult> VerificarConsumo([FromQuery] string CodBarra, int CodUsuario)
     {
-        return Ok(await _nutriService.VerificarCosumoDeProdutoPorCodUsuario(CodUsuario, CodProd));
+        return Ok(new Dados { Produtos = new List<Produto>{
+            new Produto {
+                CodBarras = "123",
+                Descricao = "Bolacha",
+                IdProduto = "147852",
+                Marca = "Club Social",
+                Titulo = "Biscoito de sal",
+                UrlImagem = @"",
+                Ingredientes = new List<string>{"Farinha de trigo"}
+            }
+        }});
+        // return Ok(await _nutriService.VerificarCosumoDeProdutoPorCodUsuario(CodUsuario, CodBarra));
     }
 }
