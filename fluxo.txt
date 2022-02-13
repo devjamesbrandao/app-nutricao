@@ -1,0 +1,24 @@
+-- Select para buscar informações do produto
+
+-- Fluxo geral:
+-> com login: a aplicação vai armazenar o id das restrições cadastradas
+-- Na hora de buscar, a aplicação vai exibir as restrições cadastradas; o usuário pode removê-las ou adicionar mais
+
+-- Pode ser uma restrição ou ingrediente específico; porém, restrição a um ingrediente é uma restrição alimentar
+-- Portanto, deve ser cadastrada na tabela de restrição
+
+-- Quando o usuário logar, a aplicação busca as restrições cadastradas para ele;
+
+-- De toda forma, o filtro vai ser sempre pelo ean13 do produto e o id da restrição
+
+-- Trazer informação do produto; buscar os ingredientes da restrição e comparar com o produto; hashset;
+
+-- A informação vai devolver as informações do produto; e se pode ou não consumi-lo;
+
+-- Não é necessário informar o id do usuário; 
+
+-- Trabalhar sobre as tabelas de produto e restrição alimentar;
+
+-- As consultas devem ser feitas no banco de leitura em mongoDb; 
+
+-- Por enquanto, utilizar Sql Server;
