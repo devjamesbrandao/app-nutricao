@@ -23,6 +23,7 @@ public class AppNutricaoController : ControllerBase
     {
         return Ok(new List<Produto>{
                     new Produto {
+                        Consumivel = false,
                         CodBarras = "123",
                         Descricao = "Bolacha",
                         IdProduto = "147852",
