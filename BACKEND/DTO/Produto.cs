@@ -3,6 +3,7 @@ namespace BACKEND.DTO
 {
     public class Produto
     {
+        public bool Consumivel {get; set;}
         public string IdProduto {get; set;}
         public string CodBarras {get; set;}
         public string UrlImagem {get; set;}
