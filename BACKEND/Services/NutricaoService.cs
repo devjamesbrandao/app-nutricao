@@ -12,10 +12,10 @@ namespace BACKEND.Services
         }
 
         public async Task<IEnumerable<string>> VerificarCosumoDeProdutoPorCodUsuario(
-            int CodUsuario, int CodProd
+            int CodUsuario, string CodBarra
         )
         {
-            return await _repository.VerificarCosumoDeProdutoPorCodUsuario(CodUsuario, CodProd);
+            return await _repository.VerificarCosumoDeProdutoPorCodUsuario(CodUsuario, CodBarra);
         }
     }
 }
