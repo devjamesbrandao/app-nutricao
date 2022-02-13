@@ -70,6 +70,9 @@ export function carregarImagem(url: string, timeoutT?: number) {
 
         }, timeout);
 
+
+        console.log("url")
+
         img.src = url;
 
     });
@@ -85,11 +88,15 @@ export function testarImagem(url: string): boolean {
             resultado = true;
 
         })
-        .catch(() => {
+        .catch((e) => {
+
+            console.log(e)
 
             resultado = false;
 
         })
+
+    resultado = true;
 
     return resultado;
 
