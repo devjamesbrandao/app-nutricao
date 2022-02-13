@@ -15,6 +15,7 @@ export const ProdutoEncontradoProvider: React.FC = ({ children }) => {
 
     const valorInicialProdutoEncontrado: IProduto = {
         idProduto: "",
+        consumivel: false,
         codBarras: "",
         urlImagem: "",
         titulo: "",
