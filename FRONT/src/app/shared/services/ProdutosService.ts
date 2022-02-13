@@ -2,6 +2,7 @@ import { api } from "./ApiConfig";
 
 export interface IProduto {
     idProduto: string;
+    consumivel: boolean;
     codBarras: string;
     urlImagem: string;
     titulo: string;
