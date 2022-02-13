@@ -166,7 +166,7 @@ export const ExibicaoProduto: React.FC = () => {
         <section className={classes.containerImagem}>
 
             {
-                testarImagem(produtoEncontrado.urlImagem) ?
+                produtoEncontrado.urlImagem.length > 0 ?
                     <ImagemExibicaoProduto src={produtoEncontrado.urlImagem} />
                     :
                     <ImagemExibicaoProduto src={imagemProdutoSemImg} />
