@@ -1,7 +1,7 @@
 import { api } from "./ApiConfig";
 
 export interface IProduto {
-    idProduto: number;
+    idProduto: string;
     codBarras: string;
     urlImagem: string;
     titulo: string;
@@ -14,14 +14,18 @@ const getByEan = async (ean: string): Promise<IProduto | undefined> => {
 
     try {
 
-        const r = await api.get<IProduto[]>(`/produtos?codBarras_like=${ean}`);
+        const r = await api.get<IProduto[]>(`/nutri/v1/verificar-consumo?CodBarra=${ean}&CodUsuario=1`);
 
         if (r.data[0]) return r.data[0];
+
+        console.log(r.data)
 
         throw new Error("");
 
     }
-    catch {
+    catch (e){
+
+        console.log(e);
 
         throw new Error("");
 
